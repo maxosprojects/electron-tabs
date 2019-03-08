@@ -148,6 +148,9 @@ const TabGroupPrivate = {
     },
 
     activateRecentTab: function (tab) {
+      if (this.shuttingDown) {
+        return;
+      }
         if (this.tabs.length > 0) {
             this.tabs[0].activate();
         }
